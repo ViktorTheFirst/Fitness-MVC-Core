@@ -1,0 +1,47 @@
+﻿@inject SignInManager<ApplicationUser> signInManager;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <environment include="Development">
+        <!--
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        -->
+        <link href="~/css/Grid.css" rel="stylesheet" />
+        <link href="~/css/ionicons.min.css" rel="stylesheet" />
+        <link href="~/css/Normalize.css" rel="stylesheet" />
+        <link href="~/css/Queries.css" rel="stylesheet" />
+        <link href="~/css/Style.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        
+
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" 
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+              crossorigin="anonymous">
+    </environment>
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+   
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="~/lib/jquery/jquery.waypoints.min.js"></script>
+    <!--for client side validation-->
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <!---->
+    <script src="~/js/CustomScript.js"></script>
+</body>
+</html>

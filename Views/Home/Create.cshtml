@@ -1,0 +1,71 @@
+﻿@model CustomerCreateViewModel
+
+@{
+    ViewData["Title"] = "Create customer";
+}
+    <div class="page_bg" id="listUsers_page">
+        <br />
+        <h2>Create customer</h2>
+
+        <br />
+        <div class="row">
+
+            <form enctype="multipart/form-data" asp-controller="home" asp-action="create" method="post">
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="Name">Name:</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="Name" placeholder="Name" style="width:100%;">
+                        <span asp-validation-for="Name" class="validationError"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="Email">Email:</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="Email" placeholder="Email" style="width:100%;">
+                        <span asp-validation-for="Email" class="validationError"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="Department">Department:</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="Department" placeholder="Department" style="width:100%;">
+                        <span asp-validation-for="Department" class="validationError"></span>
+                    </div>
+                </div>
+
+                <div row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="Photo">Photo:</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <div class="file_upload">
+                            <input asp-for="Photo" type="file" placeholder="Photo">
+                            <label class="custom-file-label"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div asp-validation-summary="All" class="validationError"></div>
+
+                <div class="row">
+                        <input type="submit" value="Create" class="btn forms_button">
+                </div>
+
+               
+
+            </form>
+
+        </div>
+
+        <div class="row">
+            <a asp-action="Index" class="btn forms_button">Back to List</a>
+        </div>
+    </div>
+

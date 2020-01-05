@@ -1,0 +1,133 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20191118205519_photoAdded.cs" />
+    <Compile Remove="Migrations\20191118205519_photoAdded.Designer.cs" />
+    <Compile Remove="Migrations\20191118205710_photoAdded2.cs" />
+    <Compile Remove="Migrations\20191118205710_photoAdded2.Designer.cs" />
+    <Compile Remove="Migrations\20191118210320_photoAdded3.cs" />
+    <Compile Remove="Migrations\20191118210320_photoAdded3.Designer.cs" />
+    <Compile Remove="Migrations\20191118210400_photoAdded4.cs" />
+    <Compile Remove="Migrations\20191118210400_photoAdded4.Designer.cs" />
+    <Compile Remove="Migrations\20191118211044_photoAdded1.cs" />
+    <Compile Remove="Migrations\20191118211044_photoAdded1.Designer.cs" />
+    <Compile Remove="Migrations\20191118211404_col_added.cs" />
+    <Compile Remove="Migrations\20191118211404_col_added.Designer.cs" />
+    <Compile Remove="Migrations\20191129135105_addCity.cs" />
+    <Compile Remove="Migrations\20191129135105_addCity.Designer.cs" />
+    <Compile Remove="Migrations\20191129135249_addCity.cs" />
+    <Compile Remove="Migrations\20191129135249_addCity.Designer.cs" />
+    <Compile Remove="Migrations\20191129135539_addCityCol.cs" />
+    <Compile Remove="Migrations\20191129135539_addCityCol.Designer.cs" />
+    <Compile Remove="Migrations\20191210102238_customerInitial.cs" />
+    <Compile Remove="Migrations\20191210102238_customerInitial.Designer.cs" />
+    <Compile Remove="Migrations\20191210114436_initial2.cs" />
+    <Compile Remove="Migrations\20191210114436_initial2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.7.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Schedule_files\core\locales-all.js" />
+    <None Include="wwwroot\Schedule_files\core\locales-all.min.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\af.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ar-dz.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ar-kw.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ar-ly.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ar-ma.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ar-sa.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ar-tn.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ar.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\bg.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\bs.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ca.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\cs.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\da.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\de.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\el.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\en-au.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\en-gb.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\en-nz.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\es-us.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\es.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\et.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\eu.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\fa.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\fi.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\fr-ca.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\fr-ch.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\fr.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\gl.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\he.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\hi.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\hr.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\hu.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\id.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\is.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\it.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ja.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ka.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\kk.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ko.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\lb.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\lt.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\lv.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\mk.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ms.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\nb.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\nl.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\nn.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\pl.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\pt-br.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\pt.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ro.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\ru.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\sk.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\sl.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\sq.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\sr-cyrl.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\sr.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\sv.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\th.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\tr.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\uk.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\vi.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\zh-cn.js" />
+    <None Include="wwwroot\Schedule_files\core\locales\zh-tw.js" />
+    <None Include="wwwroot\Schedule_files\core\main.esm.js" />
+    <None Include="wwwroot\Schedule_files\core\main.js" />
+    <None Include="wwwroot\Schedule_files\core\main.min.js" />
+    <None Include="wwwroot\Schedule_files\core\README.md" />
+    <None Include="wwwroot\Schedule_files\daygrid\main.esm.js" />
+    <None Include="wwwroot\Schedule_files\daygrid\main.js" />
+    <None Include="wwwroot\Schedule_files\daygrid\main.min.js" />
+    <None Include="wwwroot\Schedule_files\daygrid\README.md" />
+    <None Include="wwwroot\Schedule_files\interaction\main.esm.js" />
+    <None Include="wwwroot\Schedule_files\interaction\main.js" />
+    <None Include="wwwroot\Schedule_files\interaction\main.min.js" />
+    <None Include="wwwroot\Schedule_files\interaction\README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\Schedule_files\core\main.d.ts" />
+    <TypeScriptCompile Include="wwwroot\Schedule_files\daygrid\main.d.ts" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,79 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewBag.Title = "User Registration";
+}
+
+    <div class="page_bg" id="register_page">
+        <br />
+        <h2>User Registration</h2>
+
+        <div class="row">
+            <form method="post" class="contact-form">
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="FullName">Name</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="FullName" name="FullName" id="FullName" placeholder="Your full name" />
+                        <div class="col span-1-of-3">
+                            <span asp-validation-for="FullName" class="validationError"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="Email">Email</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="Email" name="Email" id="Email" placeholder="Your email" />
+                        <div class="col span-1-of-3">
+                            <span asp-validation-for="Email" class="validationError"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="Password">Password</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="Password" type="password" name="Password" id="Password" placeholder="Your password" />
+                        <div class="col span-1-of-3">
+                            <span asp-validation-for="Password" class="validationError"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="ConfirmPassword">Confirm password</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="ConfirmPassword" type="password" name="ConfirmPassword"
+                               id="ConfirmPassword" placeholder="Confirm password" />
+                        <div class="col span-1-of-3">
+                            <span asp-validation-for="ConfirmPassword" class="validationError"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label asp-for="City">City</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input asp-for="City" type="text" name="City" id="City" placeholder="Enter your city" />
+                        <div class="col span-1-of-3">
+                            <span asp-validation-for="City" class="validationError"></span>
+                        </div>
+                    </div>
+                </div>
+                <div asp-validation-summary="All" class="validationError"></div>
+                <br />
+                <div class="col">
+                    <input value="Register" type="submit" class="forms_button" style="margin-left:250px;" />
+                </div>
+            </form>
+            
+        </div>
+    </div>

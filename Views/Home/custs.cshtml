@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Customer>
+
+@{
+    ViewBag.Title = "Customer List";
+
+}
+
+    <div class="page_bg" id="listUsers_page">
+        @if (!Model.Any())
+        {
+            <br />
+            <h2>There are no customers to display</h2>
+        }
+        <br />
+        <h2>Customer list</h2>
+
+    <div class="row">
+        @foreach (var customer in Model)
+        {
+            var photoPath = "/Images/" + (customer.PhotoPath ?? "noImage.jpg");
+
+            <div class="col">
+                <div>
+                    <h3>@customer.Name</h3>
+                </div>
+                <img src="@photoPath" asp-append-version="true" style="width:400px;height:auto;"/>
+                <div>
+                    <a asp-action="details" asp-controller="home" asp-route-id="@customer.Id" class="btn forms_button">View</a>
+                    <a asp-action="edit" asp-controller="home" asp-route-id="@customer.Id" class="btn forms_button">Edit</a>
+                    <a href="#" class="btn forms_button">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+    </div>

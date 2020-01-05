@@ -1,0 +1,242 @@
+﻿@inject SignInManager<ApplicationUser> signInManager;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <header>
+        <nav>
+            <div class="row" id="logo-row">
+                <a asp-action="index" asp-controller="home">
+                    <img src="~/Images/logotyp_pink.png" alt="logo" class="logo" />
+                </a>
+
+                <ul class="main-nav">
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        <li><a asp-action="custs" asp-controller="home">Customers</a></li>
+                        <li><a asp-action="create" asp-controller="home">Create</a></li>
+                        <li><a asp-controller="Administration" asp-action="ListRoles">Manage Roles</a></li>
+                        <li><a asp-controller="Administration" asp-action="ListUsers">Manage Users</a></li>
+                    }
+
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        <li><a asp-action="trainings" asp-controller="schedule">Schedule a training</a></li>
+                        <li>
+                            <form method="post" asp-action="logout" asp-controller="account">
+                                <input type="submit" value="Logout @User.Identity.Name">
+
+                            </form>
+                        </li>
+
+                    }
+                    else
+                    {
+                        <li>
+                            <a asp-action="register" asp-controller="account">Register</a>
+                        </li>
+                        <li>
+                            <a asp-action="login" asp-controller="account">Login</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-box">
+            <h1>
+                <span class="heading-primary-main">FITNESS</span>
+                <span class="heading-primary-sub">is an every-day choise</span>
+            </h1>
+            <!--
+        <a href="#" class="btn btn-register js--scroll-to-subscribe">Create account</a>
+            -->
+            <a href="#" class="btn  js--scroll-to-pics">See More</a>
+        </div>
+    </header>
+
+
+<section class="section-features js--section-features">
+    <div class="row">
+        <h2>Heading for that &mdash; section</h2>
+        <p class="long-copy">
+            Physical fitness is a state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities.
+            Physical fitness is generally achieved through proper nutrition, moderate-vigorous physical exercise,and sufficient rest.
+
+            Before the industrial revolution, fitness was defined as the capacity to carry out the day’s activities without undue fatigue.
+            However, with automation and changes in lifestyles physical fitness is now considered a measure of the body's ability to function
+            efficiently and effectively in work and leisure activities, to be healthy, to resist hypokinetic diseases, and to meet emergency situations.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col span-1-of-4 box">
+            <i class="ion-social-reddit icon-big"></i>
+            <h3>First heading</h3>
+            <p>
+                A comprehensive fitness program tailored to an individual typically focuses on one or more specific skills, and on age or health-related needs such as bone health.
+                Many sources also cite mental, social and emotional health as an important part of overall fitness.
+            </p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-heart icon-big"></i>
+            <h3>Second heading</h3>
+            <p>
+                Developing research has demonstrated that many of the benefits of exercise are mediated through the role of skeletal muscle as an endocrine organ.
+                That is, contracting muscles release multiple substances known as myokines, which promote the growth of new tissue, tissue repair, and various anti-inflammatory functions.
+            </p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-clock icon-big"></i>
+            <h3>Third heading</h3>
+            <p>
+                New (July 2011) guidelines in the United Kingdom include the following points: The intensity at which we exercise is key, and light activity such as strolling
+                and housework is unlikely to have much positive impact on the health of most people.
+            </p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-social-usd icon-big"></i>
+            <h3>Fourth heading</h3>
+            <p>
+                Specific or task-oriented fitness is a person's ability to perform in a specific activity with a reasonable efficiency:
+                for example, sports or military service. Specific training prepares athletes to perform well in their sport.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section-pics js--section-pics">
+    <ul class="pics-showcase clearfix">
+        <li>
+            <figure class="pictures">
+                <!--meal - photo-->
+                <img src="~/Images/1.jpg" alt="picture_1" />
+            </figure>
+        </li>
+        <li>
+            <figure class="pictures">
+                <img src="~/Images/2.jpg" alt="picture_2" />
+            </figure>
+        </li>
+        <li>
+            <figure class="pictures">
+                <img src="~/Images/3.jpg" alt="picture_3" />
+            </figure>
+        </li>
+        <li>
+            <figure class="pictures">
+                <img src="~/Images/4.jpg" alt="picture_4" />
+            </figure>
+        </li>
+    </ul>
+    <ul class="pics-showcase clearfix">
+        <li>
+            <figure class="pictures">
+                <img src="~/Images/5.jpg" alt="picture_3" />
+            </figure>
+        </li>
+        <li>
+            <figure class="pictures">
+                <img src="~/Images/6.jpg" alt="picture_4" />
+            </figure>
+        </li>
+        <li>
+            <figure class="pictures">
+                <img src="~/Images/7.jpg" alt="picture_3" />
+            </figure>
+        </li>
+        <li>
+            <figure class="pictures">
+                <img src="~/Images/8.jpg" alt="picture_4" />
+            </figure>
+        </li>
+    </ul>
+
+</section>
+
+<section class="section-steps">
+    <div class="row">
+        <h2>How it works &mdash; Simple as 1, 2, 3</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="col span-1-of-2 steps-box">
+            <img src="~/Images/app-iPhone.png" alt="phone" class="app-screen" />
+        </div>
+
+        <div class="col span-1-of-2 steps-box">
+            <div class="works-step">
+                <div>1</div>
+                <p>Register to the site</p>
+            </div>
+            <div class="works-step">
+                <div>2</div>
+                <p>Choose your schedule</p>
+            </div>
+            <div class="works-step">
+                <div>3</div>
+                <p>Start being FIT</p>
+            </div>
+
+            <a href="#" class="btn-app"><img src="~/Images/download-app-android.png" alt="download app" /></a>
+
+        </div>
+    </div>
+</section>
+
+<section class="section-testimonials">
+    <div class="row">
+        <h2>What our customers say about us</h2>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-3">
+            <blockquote>
+                Best fitness sesions I had ever encountered, bluh-bluh-bluh.
+                I feel that people who are rude to me in my job are only doing it to make me feel like shit.
+                <cite><img src="~/Images/customer-1.jpg" alt="Alberto Duncan" />Alberto Duncan</cite>
+            </blockquote>
+        </div>
+        <div class="col span-1-of-3">
+            <blockquote>
+                Thank you everybody for your comments, lots of helpful stuff.
+                I find I may not have the self confidence to realise it isn't always me thats the problem, this is something to work on.
+                <cite><img src="~/Images/customer-2.jpg" alt="Alberto Duncan" />Joana Silva</cite>
+            </blockquote>
+        </div>
+        <div class="col span-1-of-3">
+            <blockquote>
+                CMV The customers who are rude to people in customer service roles always know exactly
+                how they are making employees feel and they enjoy doing it.
+                <cite><img src="~/Images/customer-3.jpg" alt="Alberto Duncan" />Milton Chapman</cite>
+            </blockquote>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="row">
+        <div class="col span-1-of-2">
+            <ul class="footer-nav">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Language</a></li>
+                <li><a href="#">Log-in</a></li>
+            </ul>
+        </div>
+        <div class="col span-1-of-2">
+            <ul class="social-links">
+                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                <li><a href="#"><i class="ion-social-reddit"></i></a></li>
+                <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <p>Copyright &copy; 2019 by Viktor Stepanenco.</p>
+    </div>
+</footer>
+
+<!--if this section defined the Render Section in NavLayout.cshtml will render it-->

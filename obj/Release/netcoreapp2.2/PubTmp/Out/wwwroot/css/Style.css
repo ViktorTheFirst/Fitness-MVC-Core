@@ -1,0 +1,549 @@
+﻿*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html,body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', Arial; /*font is inherited to all children of body*/
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    /*line-height: 40px; 1.7 times bigger than the pre-defined line height*/
+    
+    overflow-x:hidden; /*so there is no x scroll bar*/
+}
+
+*:focus{
+    outline:none; /*makes the focus border go away in chrome*/
+}
+
+.clearfix{zoom:1}
+.clearfix::after{
+    content:'.';
+    clear:both;
+    display:block;
+    height:0;
+    visibility:hidden;
+}
+
+.row{
+    max-width:1140px;
+    margin:0 auto;
+}
+
+section{
+    padding:80px 0;
+}
+
+.section-pics{
+    padding:0;
+}
+
+.section-steps,
+.section-features,
+.section-form {
+    background-color: #f4f4f4;
+}
+
+.section-testimonials {
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../images/customers_bg.jpg');
+    color:#fff;
+    background-size: cover;
+    background-attachment:fixed;/*image stays on the same place while scrolling*/
+}
+
+.section-features .long-copy { /*only long-copy that inside section-features is effected*/
+    margin-bottom: 30px;
+}
+
+.box{
+    padding:1%;
+}
+
+h2{
+    font-size:180%;
+    word-spacing:2px;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+h3{
+    font-size:110%;
+    margin-bottom:15px;
+}
+
+h2::after {
+    display: block;
+    height: 2px;
+    background-color: #ce42d4;
+    content: " ";
+    width: 500px;
+    margin: 0 auto; /*centers the line*/
+    margin-top: 30px;
+}
+
+.box p{
+    line-height:145%;
+    font-size:90%;
+}
+
+.long-copy{
+    line-height:145%;
+    width:80%;
+    margin-left:10%;
+}
+
+header {
+    height: 100vh; /*95% of the view port*/
+    /*lenear gradient goes from 1 color to second from right*/
+    background-image: -webkit-linear-gradient(to top,rgba(227, 69, 229, 0.70),rgba(255, 255, 255, 0.70)), url('../images/fit_bg_7.jpg');
+    background-image: linear-gradient(to top,rgba(227, 69, 229, 0.70),rgba(255, 255, 255, 0.70)), url('../images/fit_bg_7.jpg');
+    background-size: cover;
+    background-position: bottom; /*insures top of header always at top of viewport*/
+    background-attachment:fixed;
+}
+
+.logo {
+    height: 130px;
+    width:auto;
+    float:left;
+    margin-top:20px;
+}
+
+.sticky .logo {
+    height: 60px;
+    margin:3px 0 0 30px;
+}
+
+#logo-row{
+    max-width:none;
+    margin:0 20px 0 20px;
+}
+
+.heading-primary-main{
+    display:block; /*blocks make new line after them*/
+    font-size:60px;
+    font-weight:600;
+    letter-spacing:50px;
+    color:#fff;
+    animation-name:moveDown;
+    animation-duration:2s;
+    animation-timing-function:ease-out;
+    text-transform:uppercase;
+}
+
+.heading-primary-sub {
+    padding-right: 35px; /*so the line is exactlly in center of FITNESS*/
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    word-spacing: 7px;
+    color: #fff;
+    animation-name: moveUp;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+.icon-big {
+    font-size: 350%; /*icons are fonts - this is how you regulate size*/
+    display: block; /*to force line break*/
+    color: #ce42d4;
+    margin-bottom:5px;
+    margin-left:30px; /*to center icons over the heading*/
+}
+
+.text-box {
+    position: absolute;
+    width: 1140px;
+    top: 35%; /*35% of the width of the parent element*/
+    left: 50%;
+    text-align: center;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.btn:link,
+.btn:visited,
+input[type=submit]{
+    display: inline-block; /*doesnt force a line break and you can have padding and margin unlike regular inline elements*/
+    padding: 10px 30px; /*10 px top and bottom - 30px left and right*/
+    font-weight: 400;
+    border:solid 1px #fff;
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    border-radius: 200px;
+    transition: all 0.2s; /*we want to animate all transitions*/
+}
+
+.btn-register {
+    margin-right:50px;
+}
+
+
+
+.btn:hover,
+input[type=submit]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn:active,
+input[type=submit]:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.main-nav li{
+    display:inline-block; /*default:inline, make inline-block so we can stack them side by side*/
+    margin-left:40px;
+    
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #ce42d4;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.4s,color 0.3s;
+    transition: border-bottom 0.4s,color 0.3s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #ce42d4;
+}
+
+.sticky {
+    z-index:9999; /*the element with the highest value in z index will allways be on top of others */
+    position: fixed; /*always stays at the same point in respect to scrolling*/
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 2px #cfc7c7;
+}
+
+.sticky .main-nav li a:link, /*will be applied only to main-nav that is inside sticky class*/
+.sticky .main-nav li a:visited {
+    color: #ce42d4;
+    padding:16px 0;
+}
+
+.sticky .main-nav {
+    padding: 14px 0;
+    margin-top: 8px;
+    margin-right: 30px;
+}
+
+@keyframes moveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); /*100 px up of initial position*/
+    }
+
+    80% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); /*come back to source position*/
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /*100 px down of initial position*/
+    }
+
+    80% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); /*come back to source position*/
+    }
+}
+
+.pics-showcase{
+    list-style:none;
+    width:100%;
+    
+}
+
+.pics-showcase li{
+    float:left;
+    width:25%;
+}
+
+.pictures {
+
+    margin:0;
+    width: 100%; /*exact width of his parent*/
+    background-color: #000; /*background behind the image to make it look darker*/
+    overflow: hidden; /*if you dont want the child (pictures img) to overflow out of container*/
+}
+
+.pictures img {
+    vertical-align: bottom;
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-transition: -webkit-transform 0.5s,opacity 0.5s;
+    transition: transform 0.5s,opacity 1.5s; /*here you difine the transition*/
+}
+
+.pictures img:hover {
+    -webkit-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    transform: scale(1.04); /*here you difine what happens during the transition*/
+    opacity: 1;
+}
+
+
+.steps-box:first-child { /*will select the first among the "step-boxes" */
+    text-align: right; /* text-align works on all inline and inline-block elements and image acts like text there */
+    padding-right: 3%;
+    margin-top: 30px;
+}
+.steps-box:last-child{ /*will select the last among the "step-boxes" */
+    padding-left:3%;
+    margin-top:70px;
+}
+
+.app-screen {
+    width: 35%;
+    overflow: hidden;
+}
+
+.works-step {
+    margin-bottom: 40px;
+}
+
+.works-step:last-of-type { /*last works-step div will have larger margin*/
+    margin-bottom: 90px;
+}
+
+.works-step div {
+    color: #ce42d4;
+    border: 2px solid #ce42d4;
+    display:inline-block;
+    border-radius:50%;
+    height:50px;
+    width:50px;
+    text-align:center;
+    padding:5px;
+    float:left;
+    font-size:150%;
+    margin-right:25px;
+
+}
+
+.btn-app img{
+    height:50px;
+    width:auto;
+}
+
+blockquote{
+    padding:2%;
+    font-style:italic;
+    line-height:145%;
+    margin-top:30px;
+}
+
+blockquote::before { /*before the text*/
+    content: "\201C"; /* got it from www.css-tricks.com*/
+    font-size: 400%;
+    /*position:absolute;
+    if we want to change the position of quotes with top,left
+    in this case need to check that the parent is position:relative;
+    parent is - blockquote
+*/
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block; /*for the line break*/
+}
+
+cite img{
+    height:50px;
+    border-radius:50%;
+    margin-right:10px;
+    vertical-align:middle; /*when in block element use to align in the block*/
+}
+
+.contact-form{
+    width:60%;
+    margin:0 auto;
+}
+
+input [type=text], /*apply on all input elements with type=text*/
+select,
+textarea{
+    width:100%;
+    padding:7px;
+    border-radius:3px;
+    
+}
+
+footer{
+    background-color:#333;
+    padding:40px;
+    font-size:80%;
+}
+
+.footer-nav{
+    list-style:none;
+    float:left;
+}
+
+footer p{
+    color:#888;
+    text-align:center;
+    font-size:90%;
+    margin-top:15px;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li{
+    display:inline-block; /*so we can set margin*/
+    margin-right:20px;
+}
+
+.footer-nav li:last-child, /*last link should not have margin so it goes till the end of the page*/
+.social-links li:last-child {
+    margin-right:0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration:none;
+    border:0;
+    color:#888;
+    transition-property:color; /*what is being transitioned*/
+    transition-duration: 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color:#ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size:170%;
+}
+
+.ion-social-facebook:hover{
+    color:#3b5998;
+}
+
+.ion-social-linkedin:hover{
+    color:#007bb6;
+}
+.ion-social-reddit:hover {
+    color: #FF4301;
+}
+.ion-social-instagram:hover{
+    color:#dd2a7b;
+}
+
+.ion-social-facebook,
+.ion-social-linkedin,
+.ion-social-reddit,
+.ion-social-instagram {
+    transition-property: color; /*what is being transitioned*/
+    transition-duration: 0.4s;
+}
+
+/*--------------------------------------------------------------------------------*/
+.section-index,
+.section-profile{
+    background-color:#c3c7f5;
+    padding:20px 0 0 20px;
+}
+
+/*for backgrounds of all pages except homepage*/
+.page_bg { 
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+#login_page {
+    background-image: -webkit-linear-gradient(to top,rgba(89, 20, 219, 0.70),rgba(255, 255, 255, 0.70)), url('../images/pics_1.jpg');
+    background-image: linear-gradient(to top,rgba(26, 103, 186, 0.70),rgba(255, 255, 255, 0.70)), url('../images/pics_1.jpg');
+    background-position: center; /*insures top of header always at top of viewport*/
+}
+
+#register_page {
+    background-image: -webkit-linear-gradient(to top,rgba(42, 178, 103, 0.70),rgba(255, 255, 255, 0.70)), url('../images/fit_bg_8.jpg');
+    background-image: linear-gradient(to top,rgba(44, 165, 69, 0.70),rgba(255, 255, 255, 0.70)), url('../images/fit_bg_8.jpg');
+    background-position: bottom; /*insures top of header always at top of viewport*/
+}
+
+#listRoles_page {
+    background-image: -webkit-linear-gradient(to top,rgba(198, 212, 73, 0.70),rgba(255, 255, 255, 0.70)), url('../images/pics_5.jpg');
+    background-image: linear-gradient(to top,rgba(209, 215, 70, 0.70),rgba(255, 255, 255, 0.70)), url('../images/pics_5.jpg');
+    background-position: right; /*insures top of header always at top of viewport*/
+}
+
+#listUsers_page {
+    background-image: -webkit-linear-gradient(to top,rgba(225, 226, 217, 0.88),rgba(255, 255, 255, 0.83)), url('../images/office.jpg');
+    background-image: linear-gradient(to top,rgba(217, 217, 206, 0.88),rgba(255, 255, 255, 0.89)), url('../images/office.jpg');
+    background-position: center; /*insures top of header always at top of viewport*/
+}
+
+
+.validationError{
+    color:red;
+}
+
+.forms_button {
+    color: #000;
+    border: solid 1px #000;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #4c79e5;
+}
+
+.file_upload {
+    display: block;
+    width: auto;
+    font-size: 16px;
+    margin-top: 30px;
+   
+}
+

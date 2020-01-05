@@ -1,0 +1,88 @@
+﻿@model CustomerEditViewModel
+
+
+@{
+    ViewData["Title"] = "Edit";
+    var photoPath = "/Images/" + (Model.existingPhotoPath ?? "noImage.jpg");
+}
+
+    <div class="page_bg" id="listUsers_page">
+        <br />
+        <h2>Edit customer</h2>
+
+        <div class="row">
+            <form enctype="multipart/form-data" asp-controller="home" asp-action="edit" method="post">
+                <input hidden asp-for="Id" />
+                <input hidden asp-for="existingPhotoPath" />
+
+                <div class="row">
+                    <div class="col span-1-of-2">
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label asp-for="Name">Name:</label>
+                            </div>
+                            <div class="col span-1-of-3">
+                                <input asp-for="Name" placeholder="Name">
+                                <span asp-validation-for="Name" class="validationError"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label asp-for="Email">Email:</label>
+                            </div>
+                            <div class="col span-1-of-3">
+                                <input asp-for="Email" placeholder="Email">
+                                <span asp-validation-for="Email" class="validationError"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label asp-for="Department">Department:</label>
+                            </div>
+                            <div class="col span-1-of-3">
+                                <input asp-for="Department" placeholder="Department">
+                                <span asp-validation-for="Department" class="validationError"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label asp-for="Photo">Photo:</label>
+                            </div>
+                            <div class="span-1-of-3">
+                                <div class="file_upload">
+                                    <input asp-for="Photo" type="file" placeholder="Photo">
+                                    <label class="custom-file-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col span-1-of-2">
+                        <img src="@photoPath" alt="existing photo" style="width:400px;float:right;" asp-append-version="true" />
+                    </div>
+                </div>
+                
+
+
+                <div asp-validation-summary="All" class="validationError"></div>
+
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" value="Update" class="btn forms_button">
+                        <a asp-controller="home" asp-action="index" class="btn forms_button">Cancel</a>
+                    </div>
+                </div>
+
+              
+
+            </form>
+            
+        </div>
+
+        <div class="row">
+            <a asp-action="Index" class="btn forms_button">Back to List</a>
+        </div>
+    </div>
+

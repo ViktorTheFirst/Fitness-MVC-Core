@@ -1,0 +1,67 @@
+﻿@model IEnumerable<IdentityRole>
+
+@{
+    ViewBag.Title = "All Roles";
+}
+
+    <div class="page_bg" id="listRoles_page">
+        <br />
+        <h2>All roles</h2>
+
+        <!--if there is any role to display among the roles-->
+        @if (Model.Any())
+        {
+            <div class="row">
+                <a class="btn forms_button" asp-action="CreateRole" asp-controller="administration">Add new role</a>
+            </div>
+
+            foreach (var role in Model)
+            {
+                    <div class="row">
+                        <div class="col span-2-of-3">
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>Role ID:</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <h5>@role.Id</h5>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col span-1-of-3">
+                                    <label>Role Name:</label>
+                                </div>
+                                <div class="col span-2-of-3">
+                                    <h5>@role.Name</h5>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="col span-1-of-3">
+                        <a asp-action="Editrole" asp-controller="Administration" asp-route-id="@role.Id" class="btn forms_button">Edit</a>
+                        <a href="#" class="btn forms_button">Delete</a>
+                    </div>
+                </div>
+
+            }
+        }
+        else
+        {
+
+            <div class="row">
+                No roles created yet
+            </div>
+            <div class="row">
+                <h5>
+                    Use the button below to create a role
+                </h5>
+            </div>
+            <div class="row">
+                <a class="btn forms_button"  asp-controller="administration" asp-action="CreateRole">
+                    Create Role
+                </a>
+            </div>
+
+        }
+    </div>

@@ -1,0 +1,63 @@
+﻿@model EditRoleViewModel
+
+@{ 
+    ViewBag.Title = "Edit Role";
+}
+    <div class="page_bg" id="listUsers_page">
+        <br />
+        <h2>Edit Role</h2>
+
+        <form method="post">
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label asp-for="Id">Role ID:</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input asp-for="Id" disabled style="width:100%;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label asp-for="RoleName">Role name:</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input asp-for="RoleName" style="width:100%;">
+                    <span asp-validation-for="RoleName" class="validationError"></span>
+                </div>
+            </div>
+
+            <div asp-validation-summary="All" class="validationError"></div>
+
+            <div class="row">
+                <div>
+                    <input type="submit" value="Update" class="btn forms_button">
+                    <a asp-action="ListRoles" class="btn forms_button">Cancel</a>
+                </div>
+            </div>
+
+            <br />
+            <div class="row">
+                <div>
+                    <h3>Users in this role:</h3>
+                </div>
+                <div>
+                    @if (Model.Users.Any())
+                    {
+                        foreach (var user in Model.Users)
+                        {
+                            <h5>@user</h5>
+                        }
+                    }
+                    else
+                    {
+                        <h5>None at the moment</h5>
+                    }
+                </div>
+
+                <div class="row">
+                    <a asp-action="EditUsersInRole" asp-controller="Administration" asp-route-roleId="@Model.Id"
+                       class="btn forms_button">Add or Remove Users</a>
+                </div>
+            </div>
+        </form>
+    </div>
